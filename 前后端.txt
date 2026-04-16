@@ -1,0 +1,10 @@
+cd E:\cursor_workspace\plant-care-project-main\plant-care-backend
+conda activate fastapi_learn
+python main.py
+
+cd E:\cursor_workspace\plant-care-project-main\plantsense-app
+npx expo start --lan --clear
+
+conda activate fastapi_learn
+cd E:\cursor_workspace\plant-care-project-main\plantagent
+python scripts/rag_chat.py --enable-supabase

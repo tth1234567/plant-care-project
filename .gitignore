@@ -1,0 +1,49 @@
+# =========================
+# 1. 密钥与敏感文件 (极其重要！)
+# =========================
+#.env
+#*.env
+#token.txt
+
+# =========================
+# 2. 前端忽略项 (React Native / Expo)
+# =========================
+node_modules/
+.expo/
+npm-debug.log
+yarn-error.log
+*.apk
+*.aab
+*.ipa
+
+# =========================
+# 3. 后端忽略项 (Python / FastAPI)
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# =========================
+# 4. 编辑器与系统级垃圾文件
+# =========================
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# =========================
+# 5. 本地大模型与权重文件 (AI Models)
+# =========================
+# 忽略任意目录下的特定模型文件
+**/model.safetensors
+**/tokenizer.json
+**/sentencepiece.bpe.model
+
+# (可选) 你也可以直接屏蔽所有这类后缀名的大文件，一劳永逸：
+*.safetensors
+*.bin
+*.pth
+*.pt

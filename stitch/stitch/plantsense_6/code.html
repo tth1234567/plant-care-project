@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>植物素材库 - The Living Herbarium</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#0f2b1f",
+              "primary": "#012d1d",
+              "on-tertiary-fixed-variant": "#314c3f",
+              "on-secondary-fixed": "#042018",
+              "outline-variant": "#c1c8c2",
+              "surface-container-highest": "#e1e3e4",
+              "on-surface-variant": "#414844",
+              "surface-container-high": "#e7e8e9",
+              "on-primary-fixed-variant": "#274e3d",
+              "on-primary-fixed": "#002114",
+              "on-surface": "#191c1d",
+              "surface-dim": "#d9dadb",
+              "secondary-fixed": "#cae9db",
+              "on-tertiary": "#ffffff",
+              "on-background": "#191c1d",
+              "on-tertiary-container": "#8ead9d",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#86af99",
+              "surface-tint": "#3f6653",
+              "inverse-on-surface": "#f0f1f2",
+              "secondary": "#486459",
+              "primary-container": "#1b4332",
+              "on-tertiary-fixed": "#042015",
+              "surface-container-low": "#f3f4f5",
+              "inverse-primary": "#a5d0b9",
+              "tertiary-container": "#254135",
+              "outline": "#717973",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#4c685d",
+              "inverse-surface": "#2e3132",
+              "tertiary-fixed-dim": "#aecebc",
+              "tertiary-fixed": "#caead8",
+              "primary-fixed": "#c1ecd4",
+              "secondary-container": "#c8e7d9",
+              "surface-container": "#edeeef",
+              "background": "#f8f9fa",
+              "on-secondary-fixed-variant": "#314c42",
+              "on-error-container": "#93000a",
+              "surface-bright": "#f8f9fa",
+              "surface": "#f8f9fa",
+              "secondary-fixed-dim": "#afcdc0",
+              "on-error": "#ffffff",
+              "surface-variant": "#e1e3e4",
+              "on-secondary": "#ffffff",
+              "primary-fixed-dim": "#a5d0b9",
+              "error": "#ba1a1a",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(16px);
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#f8f9fa]/70 dark:bg-[#012d1d]/70 backdrop-blur-xl fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#012d1d] dark:text-[#f8f9fa] cursor-pointer" data-icon="menu">menu</span>
+<h1 class="font-manrope font-extrabold text-[#012d1d] dark:text-[#f8f9fa] tracking-tighter text-lg">The Living Herbarium</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#012d1d] dark:text-[#f8f9fa] cursor-pointer" data-icon="search">search</span>
+</div>
+</header>
+<main class="pt-24 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Search & Filter Section -->
+<section class="mb-12">
+<div class="flex flex-col gap-8">
+<div>
+<h2 class="text-4xl font-headline font-extrabold text-primary tracking-tight mb-2">植物素材库</h2>
+<p class="text-secondary font-medium">探索与发现适合您空间的完美植物</p>
+</div>
+<!-- Custom Search Bar -->
+<div class="relative w-full max-w-2xl">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-high border-none rounded-xl py-5 pl-16 pr-6 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder-on-surface-variant/50" placeholder="搜索植物名称或属性..." type="text"/>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-3">
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-bold text-sm tracking-wide transition-all hover:opacity-90">热门</button>
+<button class="px-8 py-3 bg-surface-container-low text-secondary rounded-full font-bold text-sm tracking-wide hover:bg-secondary-container transition-colors">观叶</button>
+<button class="px-8 py-3 bg-surface-container-low text-secondary rounded-full font-bold text-sm tracking-wide hover:bg-secondary-container transition-colors">多肉</button>
+<button class="px-8 py-3 bg-surface-container-low text-secondary rounded-full font-bold text-sm tracking-wide hover:bg-secondary-container transition-colors">开花植物</button>
+<button class="px-8 py-3 bg-surface-container-low text-secondary rounded-full font-bold text-sm tracking-wide hover:bg-secondary-container transition-colors">蕨类</button>
+</div>
+</div>
+</section>
+<!-- Plant Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Monstera Deliciosa -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer">
+<div class="aspect-[4/5] bg-white relative overflow-hidden">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Monstera Deliciosa on pure white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKfUSJiZOgtv7QPhRMICMFbPaXH-AePs10wv5_SpxgO1u7YjjBR93Av1lDcw8StUNPQCHdx5D8ruXvMbtvB1CyRF5m3VdHO_NlVCRspwMJ7ekaNqspsqgkGD_PrHYAT-A4e-wuw6fI_cUshUNsdVCdwjO_GZMu5L4hJIesjQGTFvg9zKLqO-2Gko-kjCbdcB0YZwK131CbZ9hj6EpBNoDfT4WEQCgsCY6BVBtKCM8Vaitc523fd_qbraujT1QVJ5azGNAG3faQHM0"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-primary mb-1">龟背竹</h3>
+<p class="text-xs text-secondary font-medium italic mb-4">Monstera Deliciosa</p>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container" title="光照">
+<span class="material-symbols-outlined text-[18px]" data-icon="light_mode">light_mode</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container" title="水分">
+<span class="material-symbols-outlined text-[18px]" data-icon="water_drop">water_drop</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container" title="难度">
+<span class="material-symbols-outlined text-[18px]" data-icon="psychology">psychology</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Snake Plant -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer">
+<div class="aspect-[4/5] bg-white relative overflow-hidden">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Snake Plant on pure white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmOJglPwOTIzIIzQU61FNBTbdlHRm1zl5Y4ITs71G-yzE0KLDqJWWAGbQ5wvw-s6pGxyiKEuDCBP8sMESskE14eP6SaXtj7A3_xnG0DyA1-CGumhLwxh7_QQdD04hVPcWHWcapWfC8mF0vEFTjqH-xOz7N_wJfRrtW_7W0edU_fdRDn-5o2nTrqDfzTN41_kCEf14nRJumj4Qt6mlu1OwUMXM1T4pvccDZ3Uv1Fa3dge0_TJ115eYmtVvOv93c_UsHG2mV2jA77PY"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-primary mb-1">虎尾兰</h3>
+<p class="text-xs text-secondary font-medium italic mb-4">Snake Plant</p>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="light_mode">light_mode</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="opacity">opacity</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Golden Pothos -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer">
+<div class="aspect-[4/5] bg-white relative overflow-hidden">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Golden Pothos in white pot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQU8iVp0Z5TgGKieH2Z2gxIBXvYqgM3m4RKxqwZFENcZ7Q1I8MjZmeIw5TJ-ry6nHAuuWd-vKLG0fFuY7gEkjse0Gf0uE_o8cM1WIkmaWOP4zjnb1GfxZspTmD5MOv7BjbAH43A5wxcpYgZQREg3PiUwqr8HkpE_9y4Ls43SQ-y7iaR0uPs16_tRhZMLOpcsa3ELA_k5HDssShLOtzBYMyP0qlXKvW9VbL-DyRUnhtnzCL9jfOy6JxgVNKmPsLDNrYgI8v-MZT_M4"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-primary mb-1">绿萝</h3>
+<p class="text-xs text-secondary font-medium italic mb-4">Golden Pothos</p>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="cloud">cloud</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="water_drop">water_drop</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified">verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fiddle Leaf Fig -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer">
+<div class="aspect-[4/5] bg-white relative overflow-hidden">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Fiddle Leaf Fig on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_y1E4BCZ9xCkWNDrImupPOmA5AzSDNUU_eUP5Xw9KfVZRs8Ea3FdrK5rWcdychcTdmiZ6Ik_K-czOrGLYSH6uBnrpwLH5jlUQ_Pvur2i5_CoFjzRJf2Evq8X7yd8xd13inGtW58v7dNafPr8dKE4a0m-Gli0oUlcJC9mA-Llk62T0j1UVHNolmp1MuQ16A-GjzOpt4ZsxKPIMT-f6xnCwfgp1k42lSL2eX0wBTH9VAFgRRaosaw3NG-P91bB-ou8M30zecnfnDz8"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-primary mb-1">琴叶榕</h3>
+<p class="text-xs text-secondary font-medium italic mb-4">Fiddle Leaf Fig</p>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="sunny">sunny</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="water_drop">water_drop</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="warning">warning</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Peace Lily -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer">
+<div class="aspect-[4/5] bg-white relative overflow-hidden">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Peace Lily flower on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAunWnevih4mRqM4O7Df9iYAkmXmdatyGYkTn4jGYtWzFJcl0vmqIXL3TlrEMOmpcP01quzU-83Wf3M2nxoqMu1y-Ohpsj1wGwBDcq-H3sAnRREZT1xF2pYapVj4t3_aISpZ-u8KjxyVRFicQkFSP2ESx9XltFvLZ1vZ6Kmn5wh-BEf6fIaUjpVvL5gkWlBpIqMHSI8ohjp5SiCIBWh6OHUgkLWJ58exivKARGud6-QJPqkgiGmLtVLRDMwXOHQ1G3RGlYufDehqUo"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-primary mb-1">白掌</h3>
+<p class="text-xs text-secondary font-medium italic mb-4">Peace Lily</p>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_vintage">filter_vintage</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="humidity_mid">humidity_mid</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="thumb_up">thumb_up</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Rubber Plant -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer">
+<div class="aspect-[4/5] bg-white relative overflow-hidden">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Rubber Plant with dark leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMU_ePnhxhC8ozz6YkDDZ2k7UrEk54NroTJZ9MywkQDBL6tNMGChOdPLXBz3_xuS67V3-ZT7JpssN5QwplAvnbg6L5PecyCwFyTM2VkyrrC3aaHW6TeoJkSA67TQB33AppuzljLrcZ9Lq4tnDo_U5IQz5oxEDlOPQ4Dewb0qYQtAw0uRa6tR2eM1Lqt-Jd8qUVaGnMEaqlA0AAfDjuVuSPzczuMQqERpS6dKwUS6A-1XJEU-fjD8z_StLXgrDf8zkaOl5v-Rz477o"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-primary mb-1">橡皮树</h3>
+<p class="text-xs text-secondary font-medium italic mb-4">Rubber Plant</p>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="wb_sunny">wb_sunny</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="water_drop">water_drop</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="eco">eco</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Succulents -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer">
+<div class="aspect-[4/5] bg-white relative overflow-hidden">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Assorted Succulents in white ceramic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnXPTM-21GzEWzohIsseedHi_EPNjH8D1bRIzN1C-0-TFHI-Iam5jT8P7G0L7O_NEp6Ro8ioeNhtlb7bXYkEHEPDcfmChLIR9v6es4KT6watY0rejrIKTsiwnxprBjyxjlCLBv0_Quse-taywzYUvstps2TzR9EWmpQhrOVa7cWf6oIiMGdNt3Olxw9tKnyRb9xHoHqsq-_qxhV_4mzk8inz4JiLjoP3XK8H-ToL14l3lLCjv78TuNESwQCkxqNER4sdWSzianLDw"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-primary mb-1">多肉植物</h3>
+<p class="text-xs text-secondary font-medium italic mb-4">Succulents</p>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="sunny">sunny</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="opacity">opacity</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="grade">grade</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Another Fiddle Leaf Fig (Variant) -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer">
+<div class="aspect-[4/5] bg-white relative overflow-hidden">
+<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" data-alt="Ficus Lyrata small plant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfU2BnBIJi-u0wmBxeAv9LwN0cXPxLevUWeB4qw2JV9n-SgzJkRkPIWbMAVAm-qSeMX3wTcgzd59wFYM6mhWmdHaYpP3NDcZglCGabbrThpQGRVC4uUnts0bpRd3amIfJbIQ8m0OGHU0funFPGTV-KC8tmn7hfv0G3odmF3w5oLuEG9fAiCjK9UlsvW8QOjYbc1D_SkJUIYTxYkdPP6Fr8LTi3R5AxAgKT6IdZPqD_ocj1Wj2e8KOL0N49QNYZMfjNKdrtcqa9fy8"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-primary mb-1">琴叶榕 (矮株)</h3>
+<p class="text-xs text-secondary font-medium italic mb-4">Ficus Lyrata Bambino</p>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="light_mode">light_mode</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="water_drop">water_drop</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="priority_high">priority_high</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Load More / Pagination Hint -->
+<div class="mt-20 flex justify-center pb-20">
+<button class="bg-primary text-on-primary px-12 py-4 rounded-xl font-bold tracking-widest uppercase text-sm hover:scale-105 transition-transform flex items-center gap-3 shadow-xl">
+                加载更多素材
+                <span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-white/70 dark:bg-[#0f2b1f]/70 backdrop-blur-xl flex justify-around items-center px-8 pb-4 rounded-t-[3rem] z-50 shadow-[0_-10px_40px_rgba(1,45,29,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#012d1d] dark:text-white bg-[#486459]/10 rounded-full px-4 py-2 transition-transform hover:scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="eco" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-manrope text-[10px] font-semibold uppercase tracking-widest mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#486459] opacity-60 transition-transform hover:scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="center_focus_weak">center_focus_weak</span>
+<span class="font-manrope text-[10px] font-semibold uppercase tracking-widest mt-1">Identify</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#486459] opacity-60 transition-transform hover:scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="water_drop">water_drop</span>
+<span class="font-manrope text-[10px] font-semibold uppercase tracking-widest mt-1">Care</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#486459] opacity-60 transition-transform hover:scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-manrope text-[10px] font-semibold uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

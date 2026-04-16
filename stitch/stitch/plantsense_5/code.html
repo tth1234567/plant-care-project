@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#314c3f",
+              "background": "#f8f9fa",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed-variant": "#314c42",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#274e3d",
+              "outline": "#717973",
+              "surface-tint": "#3f6653",
+              "on-tertiary-container": "#8ead9d",
+              "surface-container-low": "#f3f4f5",
+              "on-background": "#191c1d",
+              "error": "#ba1a1a",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#86af99",
+              "secondary-fixed": "#cae9db",
+              "on-tertiary": "#ffffff",
+              "surface": "#f8f9fa",
+              "tertiary": "#0f2b1f",
+              "on-surface": "#191c1d",
+              "on-secondary-container": "#4c685d",
+              "secondary": "#486459",
+              "primary": "#012d1d",
+              "surface-container-highest": "#e1e3e4",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#caead8",
+              "secondary-container": "#c8e7d9",
+              "surface-container": "#edeeef",
+              "tertiary-fixed-dim": "#aecebc",
+              "secondary-fixed-dim": "#afcdc0",
+              "on-surface-variant": "#414844",
+              "inverse-surface": "#2e3132",
+              "primary-fixed": "#c1ecd4",
+              "tertiary-container": "#254135",
+              "on-error": "#ffffff",
+              "inverse-primary": "#a5d0b9",
+              "surface-dim": "#d9dadb",
+              "surface-bright": "#f8f9fa",
+              "on-primary-fixed": "#002114",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e1e3e4",
+              "outline-variant": "#c1c8c2",
+              "primary-container": "#1b4332",
+              "on-secondary-fixed": "#042018"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-nav {
+            backdrop-filter: blur(16px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile portrait in a garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkHj6VwXTAGLFMM5wRf5UKBZyEjmRSXO8LIa7E5fabzGosKExb3t8aYMUTLWK3_ccniHCwXPN5hytpmIkQaU9x6KiFCN3OSYHSwv-XyvJj82ufQWz62_sRelelQ8aD4h0TI-SVLphJ9TuiDQbZNosjUmyYSNNXMVyGtsF1DKlNTNcVn-BiZPVf0Tr_FEw9WO0LPg4B2Wolfd7lJKwUlQ3L3yZpnlpLSPv9qRNo2NQkZ8O48ZdlwQCIkFxatersvRucTWaL66h7hwI"/>
+</div>
+<span class="font-manrope font-bold text-lg tracking-tight text-emerald-900">PlantSense</span>
+</div>
+<button class="text-emerald-900 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Header Section -->
+<div class="mb-10">
+<h1 class="text-4xl font-extrabold text-primary tracking-tight mb-2">我的花园</h1>
+<p class="text-on-surface-variant font-medium">您已经收集了 8 株健康的植物</p>
+</div>
+<!-- Asymmetric Bento-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Plant Card 1: Monstera -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/15 flex flex-col gap-4">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="Lush green Monstera Deliciosa leaf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsUYsULjInzqDGzSYgdx5pK9QdaN5nUvXUwk6wONmW1owA11zcZ-c3xJm2KCMVjXX2UUGjCM-XpEu0WG1MoPTeAp1JAHRVoQHPFMJxMRgm4x5tAD9M2k4uGzUHLF9FAEncNkPBlpu5W9s_8kOxbaZLqlZK6pqtWWtt41zqUhrMYp9QCW0p9lRU_72oPaKnSJAV1DSvzyrXOOYRRHhpL25rDgzGY4q6CqqTkzVqd8m19-eP7tjKvNmHcILym0nrNFHOPC32PcdS2n4"/>
+<div class="absolute top-3 right-3 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-primary tracking-wider uppercase">
+                        Healthy
+                    </div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-primary mb-1">Monstera Deliciosa</h3>
+<p class="text-sm text-on-surface-variant mb-4">龟背竹</p>
+<div class="space-y-2">
+<div class="flex justify-between items-end mb-1">
+<span class="text-xs font-bold text-primary/60 uppercase tracking-widest">Watering</span>
+<span class="text-xs font-bold text-primary">85%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Plant Card 2: Snake Plant -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/15 flex flex-col gap-4">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="Vertical Snake Plant in terracotta pot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtNu0Ywid6SyclpnwqM44dgNpCQkmHxbtFmkRqfCRRPFSNN6pZ7H4CmIHUd4zpERkwq_TIeqJZ53thEL5LUGHhAmcqgPuNwC-iBgzI4XhUXvMLAFkW-2rndphAWaKBP0j88XxbtxkfHf7ct3xQoruBdpTp3nR_QbvvcRD7dVjUZtv-_RtEz3SJqw8rk3qxNyPCin85KZFitXfxxrmLF-MHI4BQ2OPGH9NpBQdDVyWoclWY1rbg_vHr8jt7MuLYQcORF3xjhkannFw"/>
+<div class="absolute top-3 right-3 bg-error-container/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-on-error-container tracking-wider uppercase">
+                        Thirsty
+                    </div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-primary mb-1">Snake Plant</h3>
+<p class="text-sm text-on-surface-variant mb-4">虎尾兰</p>
+<div class="space-y-2">
+<div class="flex justify-between items-end mb-1">
+<span class="text-xs font-bold text-primary/60 uppercase tracking-widest">Watering</span>
+<span class="text-xs font-bold text-error">12%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-error w-[12%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Plant Card 3: Pothos -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/15 flex flex-col gap-4 md:col-span-2">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="relative w-full md:w-1/3 aspect-video md:aspect-square rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="Golden Pothos trailing down from a shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo5-x_T-ewmfaMomqF9l5QMvDjeEaTf5-rbExLRfvqEpYmSAOyIO0SGpqay3ttsy8wmfQVUDFTRFi8yZq18kmO_qKY3Os-Jnfz-KTubp-PlAQIP9BkKGFdK8yiMOUN5aEvRUhAn6lFeu3IX2ScTpY7Li29-5ixyom7hIVMELMBpHEGlPojaO3D9Z4zbsUlF48we-8y-UjFONq7ybhZtagcU9H4lZqVlTUTJkPYdlJErXSSmRFNidL9NvtZYNP2zEzac4E79N2WUVA"/>
+<div class="absolute top-3 right-3 bg-secondary-container/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-on-secondary-container tracking-wider uppercase">
+                            Good
+                        </div>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<h3 class="text-2xl font-bold text-primary mb-1">Golden Pothos</h3>
+<p class="text-base text-on-surface-variant mb-6">绿萝</p>
+<div class="space-y-3">
+<div class="flex justify-between items-end mb-1">
+<span class="text-xs font-bold text-primary/60 uppercase tracking-widest">Watering</span>
+<span class="text-xs font-bold text-primary">60%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary/60 w-[60%] rounded-full"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-2 italic">Next watering scheduled for tomorrow morning.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-28 right-6 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 active:scale-95 z-40">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl rounded-t-[3rem] z-50 shadow-[0_-4px_40px_rgba(1,45,29,0.06)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-emerald-800/60 dark:text-emerald-200/60 px-5 py-1.5 hover:text-emerald-900 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide">首页</span>
+</a>
+<!-- Diagnose -->
+<a class="flex flex-col items-center justify-center text-emerald-800/60 dark:text-emerald-200/60 px-5 py-1.5 hover:text-emerald-900 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">medical_services</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide">诊断</span>
+</a>
+<!-- Explore -->
+<a class="flex flex-col items-center justify-center text-emerald-800/60 dark:text-emerald-200/60 px-5 py-1.5 hover:text-emerald-900 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide">发现</span>
+</a>
+<!-- Garden (Active) -->
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-800 text-emerald-900 dark:text-emerald-50 rounded-full px-5 py-1.5 transition-all duration-400 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">conditions</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide">花园</span>
+</a>
+</nav>
+</body></html>

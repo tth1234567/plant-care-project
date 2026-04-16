@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#314c3f",
+                        "background": "#f8f9fa",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#314c42",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#274e3d",
+                        "outline": "#717973",
+                        "surface-tint": "#3f6653",
+                        "on-tertiary-container": "#8ead9d",
+                        "surface-container-low": "#f3f4f5",
+                        "on-background": "#191c1d",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#86af99",
+                        "secondary-fixed": "#cae9db",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "tertiary": "#0f2b1f",
+                        "on-surface": "#191c1d",
+                        "on-secondary-container": "#4c685d",
+                        "secondary": "#486459",
+                        "primary": "#012d1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#caead8",
+                        "secondary-container": "#c8e7d9",
+                        "surface-container": "#edeeef",
+                        "tertiary-fixed-dim": "#aecebc",
+                        "secondary-fixed-dim": "#afcdc0",
+                        "on-surface-variant": "#414844",
+                        "inverse-surface": "#2e3132",
+                        "primary-fixed": "#c1ecd4",
+                        "tertiary-container": "#254135",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#a5d0b9",
+                        "surface-dim": "#d9dadb",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed": "#002114",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "outline-variant": "#c1c8c2",
+                        "primary-container": "#1b4332",
+                        "on-secondary-fixed": "#042018"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<nav class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-md text-emerald-900 dark:text-emerald-50 fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="arrow_back">arrow_back</span>
+<span class="text-xl font-extrabold text-emerald-900 dark:text-emerald-50 tracking-tighter">PlantSense</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="share">share</span>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="User profile avatar smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-2g-Q6uZp9EAaomykVnc4HqKqxJxmkffL5Ee1iz8PXuu0klfheaRA8Aw-VYfIUugzmGJpySsByqgrpEXG9_WkUMI6YmCDl80VH7-1e7lKgiwXY98wOViLf0hkLOHmKFJYEwHoHgeqzmACPgmLC72TMJl68cIsbydLafouDSdj1m2JhqTZL-77SjYqkmtTEi6qAn0KQa3258q_EdPFutIp3c4c5mfEvVernG-dzWmuV0dUMJoA8K-0DzVQ5_sDyZ7Qxb6H115hnCs"/>
+</div>
+</div>
+</nav>
+<main class="pt-20 px-6 max-w-2xl mx-auto space-y-10">
+<header class="relative space-y-4">
+<div class="flex items-end justify-between">
+<div>
+<h1 class="text-4xl font-extrabold text-primary tracking-tight leading-none mb-2">Monstera</h1>
+<p class="text-on-surface-variant font-medium">龟背竹 · Deliciosa</p>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-bold">Safe for Pets &amp; Kids</span>
+</div>
+</div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
+<img alt="Plant Image" class="w-full h-full object-cover" data-alt="Close up of a monstera leaf with small yellow spots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8QO4bWFn_ORF7w1wowQzMjVca5254NF-DzqVp-7vHGF0JUfC3q4M5m1TSWFg_DcAIM_Byv8u16g6kiVuI4bfySkHpJ30TP6z5xTYKf_zVtfuFUvRAj7U34EYFefIdGeL2ruGJte1S-AZ9_ggphbgqI2WkFgiuYWopMsPyTcvH2kdkwlqu8e8JZKJNumVWvU5rRGRAbjWvIIzbUlTwH3gBe_fggKpF-PpMvy3RTAGH1Rn2X739-jadN1RgExFdHhI0vap5axeRtAQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+</header>
+<section class="space-y-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-2xl font-bold text-primary">诊断结果</h2>
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">Low Risk</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="medical_services">medical_services</span>
+<div>
+<p class="text-xl font-bold text-on-surface">Mild Leaf Spot</p>
+<p class="text-on-surface-variant text-sm">轻微叶斑病 · 初级阶段</p>
+</div>
+</div>
+</div>
+<div class="bg-primary-container text-on-primary-container p-8 rounded-xl relative overflow-hidden">
+<div class="absolute -right-10 -top-10 opacity-10">
+<span class="material-symbols-outlined text-[160px]" data-icon="psychology">psychology</span>
+</div>
+<div class="flex items-start gap-4 mb-6">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-white">AI 养护建议</h3>
+<p class="text-on-primary-container/80 text-sm italic">"别担心，您的龟背竹只是遇到了一点小麻烦。通过以下调整，它很快就会恢复生机。"</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 bg-white/5 p-4 rounded-lg backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="water_drop">water_drop</span>
+<p class="text-sm font-medium text-white/90">减少浇水频率，确保盆土表面 2-3 厘米干燥后再浇水</p>
+</div>
+<div class="flex items-center gap-4 bg-white/5 p-4 rounded-lg backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="wb_sunny">wb_sunny</span>
+<p class="text-sm font-medium text-white/90">将其移至明亮的散射光处，避免强烈的阳光直射</p>
+</div>
+<div class="flex items-center gap-4 bg-white/5 p-4 rounded-lg backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="air">air</span>
+<p class="text-sm font-medium text-white/90">增加空气流通，避免叶片长时间处于潮湿密闭环境</p>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-center text-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="thermostat">thermostat</span>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">最佳温度</p>
+<p class="text-lg font-bold">18°C - 27°C</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-center text-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="humidity_mid">humidity_mid</span>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">环境湿度</p>
+<p class="text-lg font-bold">60% - 80%</p>
+</div>
+</section>
+</main>
+<div class="fixed bottom-32 left-0 w-full flex justify-center px-6 z-40 pointer-events-none">
+<button class="pointer-events-auto bg-primary text-on-primary px-10 py-5 rounded-full shadow-2xl flex items-center gap-3 transition-transform active:scale-95 hover:bg-primary-container">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-bold tracking-tight">Chat with AI</span>
+</button>
+</div>
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl rounded-t-[3rem] z-50 shadow-2xl">
+<a class="flex flex-col items-center justify-center text-emerald-800/60 dark:text-emerald-200/60 px-5 py-1.5 hover:text-emerald-900 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide mt-1">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-800 text-emerald-900 dark:text-emerald-50 rounded-full px-5 py-1.5 transition-all duration-400 ease-in-out scale-105" href="#">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide mt-1">诊断</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-800/60 dark:text-emerald-200/60 px-5 py-1.5 hover:text-emerald-900 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide mt-1">发现</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-800/60 dark:text-emerald-200/60 px-5 py-1.5 hover:text-emerald-900 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="Psychological_Condition">conditions</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide mt-1">花园</span>
+</a>
+</nav>
+</body></html>

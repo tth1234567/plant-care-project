@@ -1,0 +1,165 @@
+Metadata-Version: 2.4
+Name: plantagent
+Version: 0.1.0
+Summary: Mini RAG + Supabase tools for plant care assistant
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# Plant Care Assistant (Mini RAG + Supabase Tools)
+
+一个面向家庭植物养护场景的“麻雀版”智能体项目。  
+它结合了本地知识库 RAG 与 Supabase 数据工具调用，既能回答通用养护知识，也能回答你的个性化数据问题（植物状态、任务安排、成长日志回顾）。
+
+## 项目亮点
+
+- 完整 RAG 链路：分片 -> 向量检索 -> 交叉编码器重排 -> LLM 生成
+- 数据库工具化：通过 LangChain Tool 调用 Supabase 表
+- 双源问答：同时支持“知识库常识”和“用户私有数据”
+- 可扩展工具目录：所有工具统一维护在 `src/plantagent/tools/`
+- 成长日志文案增强：支持植物第一视角、手账风格回顾
+
+## 核心能力
+
+### 1. 通用养护问答（知识库）
+
+基于 `data/knowledge.md` 构建本地向量索引，适合回答：
+
+- 病虫害识别与处理建议
+- 浇水/施肥/光照/温湿度通用规范
+- 用药安全与家庭宠物/儿童场景提示
+
+### 2. 个性化数据问答（Supabase Tools）
+
+当前内置工具：
+
+- `get_plant_status_overview`：返回每盆植物健康度总览
+- `get_recent_tasks`：返回任务清单（支持时间范围）
+- `get_growth_journal`：返回成长日志结构化条目用于手账式生成
+
+## 项目结构
+
+```text
+plantagent/
+├─ data/
+│  ├─ knowledge.md
+│  └─ chroma_knowledge/
+├─ scripts/
+│  ├─ build_index.py
+│  └─ rag_chat.py
+└─ src/plantagent/
+   ├─ config/
+   │  └─ rag_settings.py
+   ├─ rag/
+   │  ├─ index_builder.py
+   │  ├─ rag_chat.py
+   │  └─ supabase_context.py
+   └─ tools/
+      ├─ __init__.py
+      └─ supabase_tools.py
+```
+
+## 运行前准备
+
+### 1) Python 环境
+
+```bash
+conda activate agent
+pip install -r requirements.txt
+```
+
+### 2) 配置环境变量
+
+必需：
+
+- `DASHSCOPE_API_KEY`
+
+启用 Supabase 时额外需要：
+
+- `SUPABASE_URL`
+- `SUPABASE_KEY`
+- `SUPABASE_USER_ID`（可选，也可命令行传）
+
+## 快速开始
+
+### 1) 构建本地向量索引
+
+```bash
+python scripts/build_index.py --chunk-size 1000 --chunk-overlap 150
+```
+
+索引默认持久化到 `data/chroma_knowledge/`。
+
+### 2) 启动聊天
+
+仅知识库模式：
+
+```bash
+python scripts/rag_chat.py
+```
+
+知识库 + Supabase 数据模式：
+
+```bash
+python scripts/rag_chat.py --enable-supabase --supabase-user-id <your_user_id>
+```
+
+退出：`exit` 或 `quit`
+
+## 工具调用逻辑（麻雀版）
+
+`rag_chat.py` 使用轻量意图路由，按问题类型决定是否调用工具：
+
+- 植物状态类问题 -> `get_plant_status_overview`
+- 任务类问题 -> `get_recent_tasks`
+- 成长日志/手账类问题 -> `get_growth_journal`
+- 其他问题 -> 走知识库 RAG
+- 混合问题 -> 工具结果与知识库上下文一并送入 LLM
+
+## 任务时间范围支持
+
+`get_recent_tasks` 支持：
+
+- `today`（今天，默认）
+- `tomorrow`（明天）
+- `next_3_days`（最近 3 天）
+- `this_week`（本周）
+
+对应自然语言示例：
+
+- “我今天要做什么养护任务”
+- “明天有哪些任务”
+- “最近3天任务安排”
+- “本周待办有哪些”
+
+## 成长日志手账风格
+
+当问题命中成长日志意图（如“帮我回顾成长日记”）时，系统会：
+
+1. 从 `growth_logs` 拉取最近日志；
+2. 结合植物昵称/品种整理结构化条目；
+3. 由 LLM 生成“植物第一视角、对主人说话”的手账风格内容。
+
+## 常见问题
+
+### 1) `ProxyError` / 无法访问 DashScope
+
+这通常是网络或代理问题，不是工具逻辑问题。请检查：
+
+- `HTTP_PROXY` / `HTTPS_PROXY` 设置是否正确
+- VPN/代理是否在线
+- 当前环境是否能访问 `dashscope.aliyuncs.com`
+
+### 2) LangChain Deprecation Warning
+
+当前代码可正常运行，只是依赖升级提示。后续可逐步迁移到：
+
+- `langchain-huggingface`
+- `langchain-chroma`
+
+## 后续扩展建议
+
+- 增加更多工具：如 `get_diagnosis_history`、`get_watering_trend`
+- 把时间解析升级为“最近 N 天/指定日期区间”
+- 为 Tool 输出加统一 schema 与容错回退
+- 增加对话级记忆与用户偏好策略
+

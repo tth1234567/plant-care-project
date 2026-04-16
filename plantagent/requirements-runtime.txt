@@ -1,0 +1,15 @@
+langchain-core
+langchain-community
+langchain-classic
+chromadb
+sentence-transformers
+transformers
+torch
+python-dotenv
+supabase
+postgrest
+storage3
+realtime
+dashscope
+tenacity
+httpx

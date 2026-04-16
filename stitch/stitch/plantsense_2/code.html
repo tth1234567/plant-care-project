@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#314c3f",
+              "background": "#f8f9fa",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed-variant": "#314c42",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#274e3d",
+              "outline": "#717973",
+              "surface-tint": "#3f6653",
+              "on-tertiary-container": "#8ead9d",
+              "surface-container-low": "#f3f4f5",
+              "on-background": "#191c1d",
+              "error": "#ba1a1a",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#86af99",
+              "secondary-fixed": "#cae9db",
+              "on-tertiary": "#ffffff",
+              "surface": "#f8f9fa",
+              "tertiary": "#0f2b1f",
+              "on-surface": "#191c1d",
+              "on-secondary-container": "#4c685d",
+              "secondary": "#486459",
+              "primary": "#012d1d",
+              "surface-container-highest": "#e1e3e4",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#caead8",
+              "secondary-container": "#c8e7d9",
+              "surface-container": "#edeeef",
+              "tertiary-fixed-dim": "#aecebc",
+              "secondary-fixed-dim": "#afcdc0",
+              "on-surface-variant": "#414844",
+              "inverse-surface": "#2e3132",
+              "primary-fixed": "#c1ecd4",
+              "tertiary-container": "#254135",
+              "on-error": "#ffffff",
+              "inverse-primary": "#a5d0b9",
+              "surface-dim": "#d9dadb",
+              "surface-bright": "#f8f9fa",
+              "on-primary-fixed": "#002114",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e1e3e4",
+              "outline-variant": "#c1c8c2",
+              "primary-container": "#1b4332",
+              "on-secondary-fixed": "#042018"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Portrait of a smiling user profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnK9WMmSwbvFuUA-OHPX9amlHD6i__O9vuIIlEzfQ8UzlFF8h234XcNGlf2MycZLwJwNS8j_byaVDOBTeSn7D063t3rtTR0m1p1oRHEXShkScbqqsvto0thHW1dmPtKaOaCQB9ZAbG8OY0gRidY4sZAJPBX-jVVycfFyVsLMfbLAB790bBXbpTgEy0DWiuj0c_xRMeOlboHp_TgI_YtE1glAyOnAFzPnMTOUd_qZOZNc9XvYBZTvT61y3Y8UpyDtbdSORmSzNHF9o"/>
+</div>
+<span class="text-xl font-extrabold text-emerald-900 dark:text-emerald-50 tracking-tighter">PlantSense</span>
+</div>
+<button class="text-emerald-900 dark:text-emerald-50 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="mt-20 px-6 max-w-2xl mx-auto">
+<!-- Greeting & Weather Bento Section -->
+<section class="grid grid-cols-12 gap-4 mb-10">
+<div class="col-span-12">
+<h1 class="text-3xl font-extrabold text-primary tracking-tight mb-1">早安，园丁</h1>
+<p class="text-secondary opacity-80 text-lg">今天你的植物看起来很有精神。</p>
+</div>
+<!-- Weather Card -->
+<div class="col-span-12 p-6 bg-surface-container-lowest rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">wb_sunny</span>
+</div>
+<div>
+<div class="text-2xl font-bold text-primary">24°C</div>
+<div class="text-sm text-on-surface-variant font-medium">北京 · 晴朗</div>
+</div>
+</div>
+<div class="h-10 w-px bg-outline-variant/30"></div>
+<div class="text-right">
+<div class="text-sm font-semibold text-secondary">湿度 45%</div>
+<div class="text-xs text-on-surface-variant">适宜植物生长</div>
+</div>
+</div>
+</section>
+<!-- Main Action Area: Identify/Diagnose -->
+<section class="mb-10">
+<div class="relative overflow-hidden rounded-xl bg-primary h-56 flex flex-col justify-end p-8 text-white">
+<div class="absolute top-0 right-0 w-48 h-full opacity-40">
+<img alt="Plant" class="w-full h-full object-cover" data-alt="Close up of lush green monstera leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrSz2bfZD-dX_B6RJg3pFtw4qupvrdxth8Z7FOhGUQiVQ4-kcSN95fJ0K_nZ0QtKk-SCj_k_7t1_WiRg0MxRAEfxUXErvhdFvYQau6gakUykaex2enQTP8X3wBE_5kl97BhimmJpIKcDgMeP4HCDF2-ze3uoDHkoLsyM4GKzspNApi6doyiMA8-H0LEHxOcLUVf_MmmcqZ_bmewbARjWigKmd9YTcVyfN0iHqAhDCJY2u2to6YkKBbKLbzK9GE-L-UwA2NEkPvdtA"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+<div class="relative z-10">
+<h2 class="text-2xl font-bold mb-2">识物诊断</h2>
+<p class="text-primary-fixed-dim text-sm mb-6 max-w-[200px]">AI 智能识别近万种植物，快速排查病虫害问题。</p>
+<button class="flex items-center gap-2 bg-primary-fixed text-primary px-6 py-3 rounded-full font-bold shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined">photo_camera</span>
+<span>立即拍照</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Today's Tasks -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold text-primary">今日植觉</h3>
+<span class="text-sm font-semibold text-secondary-fixed-dim bg-primary-container px-3 py-1 rounded-full">3 项待办</span>
+</div>
+<div class="space-y-4">
+<!-- Task Card: Watering -->
+<div class="group bg-surface-container-low p-5 rounded-lg flex items-center gap-4 hover:bg-surface-container-lowest transition-colors">
+<div class="w-14 h-14 rounded-lg bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">water_drop</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary">浇水</h4>
+<p class="text-sm text-on-surface-variant">琴叶榕 · 阳台</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+<!-- Task Card: Fertilizing -->
+<div class="group bg-surface-container-low p-5 rounded-lg flex items-center gap-4 hover:bg-surface-container-lowest transition-colors">
+<div class="w-14 h-14 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl">eco</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary">施肥</h4>
+<p class="text-sm text-on-surface-variant">蝴蝶兰 · 客厅</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+<!-- Task Card: Pruning -->
+<div class="group bg-surface-container-low p-5 rounded-lg flex items-center gap-4 hover:bg-surface-container-lowest transition-colors">
+<div class="w-14 h-14 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">content_cut</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary">修剪</h4>
+<p class="text-sm text-on-surface-variant">文竹 · 书房</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Guide Section -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold text-primary">养护指南</h3>
+<button class="text-sm font-bold text-secondary flex items-center gap-1">
+                    全部 <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar -mx-6 px-6">
+<!-- Guide Card 1 -->
+<div class="min-w-[240px] bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="h-40 overflow-hidden relative">
+<img alt="Guide 1" class="w-full h-full object-cover" data-alt="Potted succulent plants on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6lMMpm-nZx8_6_3Yo_1IIw0VbPqBH-BIzh-U-fKAkq8BJ1b5R7UIPQxctJ_H9pSjfyszzukx-2N_LOBvlQ_FEzWbiAuCnWOlgFX4NHpdaaWilwy-PLYJmFzdDsxInS-qfVBzWg4xLRoazQ4Ed5Rt_V4L3KLgTJTsZOoriz1IjPmsp6KRNXUKL8zQeJd-zDJgExL5RVkGq6nG3aQM87kdGLZXG3caAnZrWWTWapP4Gx_YgOPpcCZ3YTOi8-fAzCUWOKX0MF6qX4kI"/>
+<div class="absolute top-3 left-3 bg-white/80 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">新手必看</div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-primary mb-1">多肉植物越冬指南</h4>
+<p class="text-xs text-on-surface-variant line-clamp-2">掌握这三点，让你的多肉平稳度过寒冬，不黑腐...</p>
+</div>
+</div>
+<!-- Guide Card 2 -->
+<div class="min-w-[240px] bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="h-40 overflow-hidden relative">
+<img alt="Guide 2" class="w-full h-full object-cover" data-alt="Sunlight hitting house plants indoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy03MNXeI_34Y9AH8KLOoZbljk3X8wwmFEpzfGwAkkEFOKdA6yOYhcVBLUxRJmKyS0za8aR5AHU0shPAbTMYHnsccL0TuhB37avBvG9Usd5fkUcsA1qqPymqYtMstngFsAIQmYrVlxwPZpOzpicN4OYlcTS6Gr4beQfk2hLlLUGkqgibrQkNcHE43l0uvGU_YrzKAW54eXIRwO8lCuqH17YegGt35eXO5tt88Dg-sE6FXqqnDyjrQxdIBhT8cgMMGdLGuiF_54Qjk"/>
+<div class="absolute top-3 left-3 bg-white/80 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">进阶技巧</div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-primary mb-1">如何调节室内光照</h4>
+<p class="text-xs text-on-surface-variant line-clamp-2">北向阳台也能养出茂盛森林，室内补光全攻略...</p>
+</div>
+</div>
+<!-- Guide Card 3 -->
+<div class="min-w-[240px] bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="h-40 overflow-hidden relative">
+<img alt="Guide 3" class="w-full h-full object-cover" data-alt="Variety of healthy green indoor plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr89uRO1Jv8Z9ETEnMkcPzSspiTzTgHws0hietPYVUgMnMEd9FfqmEAPrCRkBh1EKtJoRgxLTFQigmOc0ZF6WxJElETfF8Lji5FckUVrQBOy7StK1l2yARRzceg_q40GNCnL4dLhOwNvFwAXsJUUyVSUPbOcZZURQsYwYiOQ7FuqS-yJL1JScvlzihchwe6qHZl6jSRr2jcpafl-JSnNSC6IW6zJy35q7jF-jKsA3U1LP_JdEDkp4P4DNJ48ZyIXuIVf_xhU__dLc"/>
+<div class="absolute top-3 left-3 bg-white/80 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">科普</div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-primary mb-1">植物叶片发黄原因</h4>
+<p class="text-xs text-on-surface-variant line-clamp-2">对症下药，快速解决叶片干枯发黄的常见问题...</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl rounded-t-[3rem] z-50 shadow-2xl">
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-800 text-emerald-900 dark:text-emerald-50 rounded-full px-5 py-1.5 transition-all duration-400 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-800/60 dark:text-emerald-200/60 px-5 py-1.5 hover:text-emerald-900 dark:hover:text-emerald-50" href="#">
+<span class="material-symbols-outlined">medical_services</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide">诊断</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-800/60 dark:text-emerald-200/60 px-5 py-1.5 hover:text-emerald-900 dark:hover:text-emerald-50" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide">发现</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-800/60 dark:text-emerald-200/60 px-5 py-1.5 hover:text-emerald-900 dark:hover:text-emerald-50" href="#">
+<span class="material-symbols-outlined">conditions</span>
+<span class="font-manrope text-[10px] font-semibold tracking-wide">花园</span>
+</a>
+</nav>
+<!-- FAB (Suppressed on Home according to shell rules as primary actions are inline, but available if requested - here we keep focus on content) -->
+</body></html>
